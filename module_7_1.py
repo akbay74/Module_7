@@ -1,3 +1,5 @@
+import os.path
+
 class Product:
 
     def __init__(self, name, weight, category):
@@ -15,8 +17,9 @@ class Shop:
     __file_name = 'products.txt'
 
     def __init__(self):
-        file = open(self.__file_name, 'a')
-        file.close()
+        if not(os.path.isfile(self.__file_name)):
+            file = open(self.__file_name, 'a')
+            file.close()
 
     def get_products(self):
         file = open(self.__file_name, 'r')
