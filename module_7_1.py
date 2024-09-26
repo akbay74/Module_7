@@ -18,7 +18,7 @@ class Shop:
 
     def __init__(self):
         if not(os.path.isfile(self.__file_name)):
-            file = open(self.__file_name, 'a')
+            file = open(self.__file_name, 'w')
             file.close()
 
     def get_products(self):
